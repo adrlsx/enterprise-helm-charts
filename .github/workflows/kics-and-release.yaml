@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - feat/namespace-only-deployment
     paths:
       - "charts/**"
 
@@ -56,7 +57,7 @@ jobs:
       - name: Install Helm
         uses: azure/setup-helm@v4
       - name: Release
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.ref == 'refs/heads/main' || github.ref == 'refs/heads/feat/namespace-only-deployment' }}
         uses: helm/chart-releaser-action@v1.7.0
         env:
           CR_SKIP_EXISTING: "true"
