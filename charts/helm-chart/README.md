@@ -1,6 +1,6 @@
 # burp-suite-enterprise-edition
 
-![Version: 2025.3.0](https://img.shields.io/badge/Version-2025.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025.3-21104](https://img.shields.io/badge/AppVersion-2025.3--21104-informational?style=flat-square)
+![Version: 2025.3.0-namespace-only](https://img.shields.io/badge/Version-2025.3.0--namespace--only-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025.3-21104](https://img.shields.io/badge/AppVersion-2025.3--21104-informational?style=flat-square)
 
 A Helm chart to create the k8s cluster dependencies for BSEE. See the release notes at https://portswigger.net/burp/releases/enterprise-edition-2025-3.
 
