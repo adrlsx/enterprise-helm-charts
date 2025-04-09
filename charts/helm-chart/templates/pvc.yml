@@ -1,0 +1,17 @@
+{{- if .Values.createPersistentVolumeClaim }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.persistentVolumeClaim }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: shared-storage
+    app.kubernetes.io/component: storage
+{{ include "recommended-labels" . | indent 4 }}
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 10Gi
+{{- end }}
