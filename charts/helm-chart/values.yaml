@@ -34,6 +34,10 @@ services:
   webServer:
     installationEnvironment: KUBERNETES
     label: "app.portswigger.net/ingress: web-server"
+    # -- Controls whether to create the ingress
+    createIngress: true
+    # -- Domain name for host-based ingress routing
+    domain: "example.com"
     # If set to true, then none of the configuration below will be used, and we will attempt to read the HTTP(S)
     # configuration from the database. This should only be used if upgrading from v2023.6 or earlier. It has no effect
     # when performing a helm install.
