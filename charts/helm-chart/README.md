@@ -1,6 +1,6 @@
 # burp-suite-enterprise-edition
 
-![Version: 2025.3.0-namespace-only](https://img.shields.io/badge/Version-2025.3.0--namespace--only-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025.3-21104](https://img.shields.io/badge/AppVersion-2025.3--21104-informational?style=flat-square)
+![Version: 2025.3.0-namespace-only-with-pvc-and-ingress](https://img.shields.io/badge/Version-2025.3.0--namespace--only--with--pvc--and--ingress-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2025.3-21104](https://img.shields.io/badge/AppVersion-2025.3--21104-informational?style=flat-square)
 
 A Helm chart to create the k8s cluster dependencies for BSEE. See the release notes at https://portswigger.net/burp/releases/enterprise-edition-2025-3.
 
@@ -24,6 +24,7 @@ A Helm chart to create the k8s cluster dependencies for BSEE. See the release no
 | connectionCheckContainerCpu | string | `"1400m"` |  |
 | connectionCheckContainerMemory | string | `"2Gi"` |  |
 | containerRegistry | string | `"public.ecr.aws"` | The container registry used to get the Enterprise images |
+| createPersistentVolumeClaim | bool | `true` | Controls whether to create the persistent volume claim or not |
 | database.enterpriseServerConnectionUsername | string | `""` | Connection username for the Enterprise Server database connection. Required if connection username differs from internal username e.g. if @hostname suffix is mandated (Azure) |
 | database.enterpriseServerPassword | string | `""` | Password for the Enterprise Server database connection |
 | database.enterpriseServerUsername | string | `""` | Username for the Enterprise Server database connection |
@@ -48,6 +49,8 @@ A Helm chart to create the k8s cluster dependencies for BSEE. See the release no
 | scanContainerCpu | string | `"1400m"` |  |
 | scanContainerMemory | string | `"8Gi"` |  |
 | services.enterpriseServer.installationEnvironment | string | `"KUBERNETES"` |  |
+| services.webServer.createIngress | bool | `true` | Controls whether to create the ingress |
+| services.webServer.domain | string | `"example.com"` | Domain name for host-based ingress routing |
 | services.webServer.httpPort | string | `"8080"` |  |
 | services.webServer.httpsCertificateSecret.key | string | `"certificate"` |  |
 | services.webServer.httpsCertificateSecret.name | string | `"bsee-web-server-https"` |  |
